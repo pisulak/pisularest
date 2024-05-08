@@ -6,7 +6,7 @@ To open:
   Use XAMPP or other app with Apache server, MariaDB database.
   Commint database you your localhost MariaDB database.
   Type localhost/pisularest on your web browser.
-  Done:)
+  Done
 
 To login:
 administrator account:
