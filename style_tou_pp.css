@@ -1,0 +1,65 @@
+@font-face {
+    font-family: "ubuntu";
+    src: url("font-ubuntu/Ubuntu-M.ttf");
+}
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.header {
+    font-size: 3rem;
+}
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-family: "ubuntu";
+}
+.back {
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: url("grafika/back.png");
+    background-position: center;
+    background-size: 60%;
+    background-repeat: no-repeat;
+}
+.back2 {
+    position: absolute;
+    right: 3%;
+    top: 5%;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: url("grafika/back.png");
+    background-position: center;
+    background-size: 60%;
+    background-repeat: no-repeat;
+}
+.form {
+    overflow: visible;
+    padding: 70px 50px 70px 50px;
+}
+.columns {
+    margin-top: 30px;
+    columns: 2;
+    column-rule: 1px solid var(--clr-black);
+}
+form {
+    margin: 20px;
+}
+.form a {
+    color: var(--clr-black);
+    text-decoration: none;
+}
+.form a:hover {
+    text-decoration: underline;
+}

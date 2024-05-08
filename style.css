@@ -1,0 +1,645 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    width: 100%;
+    background: var(--clr-white);
+    font-family: sans-serif;
+}
+:root {
+    --clr-white: rgb(255,255,255);
+    --clr-black: rgb(0,0,0);
+    --clr-accent-red-1: rgb(230, 0, 35);
+    --clr-accent-red-2: rgb(173, 8, 27);
+    --clr-light-grey: rgb(239, 239, 239);
+    --clr-dark-grey: rgb(226, 226, 226);
+    --clr-grey: rgb(90, 90, 90);
+    --clr-main-title-1: rgb(185, 133, 0);
+    --clr-main-title-2: rgb(154, 92, 156);
+    --clr-main-title-3: rgb(0, 118, 211);
+    --clr-main-title-4: rgb(112, 170, 65);
+    --clr-transparent-grey: rgba(51,51,51,0.8);
+}
+@font-face {
+    font-family: "ubuntu";
+    src: url("font-ubuntu/Ubuntu-M.ttf");
+}
+
+/* MENU */
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 20px 0 20px;
+    font-family: "ubuntu";
+}
+.logo {
+    display: flex;
+}
+.logo-text {
+    width: 150px;
+    color: var(--clr-accent-red-1);
+    font-size: 1.2rem;
+    margin-left: 5px;
+}
+.logo img{
+    height: 30px;
+    transform: translateY(-5px);
+}
+.menu-item {
+    display: inline-flex;
+    justify-content: center;
+    margin: 0 5px;
+    min-width: 50px;
+    width: auto;
+    height: 30px;
+    font-size: 1rem;
+    padding: 10px 15px 0 15px;
+    border-radius: 30px;
+}
+.menu-items a {
+    color: var(--clr-black);
+    text-decoration: none;
+}
+.menu-item a {
+    color: var(--clr-black);
+    text-decoration: none;
+}
+.menu-item a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.menu-item-4 {
+    color: var(--clr-white);
+    background: var(--clr-accent-red-1);
+}
+.menu-item-4:hover {
+    background: var(--clr-accent-red-2);
+    cursor: pointer;
+}
+.menu-item-5 {
+    background: var(--clr-light-grey);
+    color: var(--clr-black);
+}
+.menu-item-5:hover {
+    background: var(--clr-dark-grey);
+    cursor: pointer;
+}
+
+/* SLIDESHOW */
+
+.slideshow {
+    margin-top: 120px;
+    position: relative;
+    text-align: center;
+    font-family: "ubuntu";
+}
+.main-title {
+    font-size: 3.5rem;
+    width: max-content;
+    margin: 0 auto;
+    z-index: 2;
+}
+.header {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    font-size: 3rem;
+    z-index: 2;
+}
+
+/* DOTS */
+
+.dots {
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    margin: 140px 5px 0 5px;
+    background: var(--clr-dark-grey);
+    transition: 200ms ease-in;
+    position: relative;
+    z-index: 2;
+}
+.dots.first:hover {
+    background: var(--clr-main-title-1);
+}
+.dots.second:hover {
+    background: var(--clr-main-title-2);
+}
+.dots.third:hover {
+    background: var(--clr-main-title-3);
+}
+.dots.fourth:hover {
+    background: var(--clr-main-title-4);
+}
+
+/* TITLES */
+
+.first-title {
+    background: var(--clr-main-title-1);
+}
+.second-title {
+    background: var(--clr-main-title-2);
+}
+.third-title {
+    background: var(--clr-main-title-3);
+}
+.fourth-title {
+    background: var(--clr-main-title-4);
+}
+
+.header-first {
+    color: var(--clr-main-title-1);
+}
+.header-second {
+    color: var(--clr-main-title-2);
+}
+.header-third {
+    color: var(--clr-main-title-3);
+}
+.header-fourth {
+    color: var(--clr-main-title-4);
+}
+
+
+
+/* GRID */
+
+.grid-container {
+    position: absolute;
+    top: 0;
+    display: grid;
+    gap: 16px 12px;
+    grid-template-areas:    "a . . . . . g"
+                            "a b . . . f g"
+                            "h b c . e f n"
+                            "h i c d e m n"
+                            ". i j d l m ."
+                            ". . j k l . ."
+                            ". . . k . . .";
+    grid-template-columns: repeat(7, 240px);
+    grid-template-rows: repeat(7, 160px);
+    justify-content: center;
+    width: 100%;
+    height: 600px;
+    z-index: 1;
+}
+.grid-item {
+    position: relative;
+    border-radius: 20px;
+}
+
+.grid-item-1 {
+    grid-area: a;
+}
+.grid-item-2 {
+    grid-area: b;
+}
+.grid-item-3 {
+    grid-area: c;
+}
+.grid-item-4 {
+    grid-area: d;
+}
+.grid-item-5 {
+    grid-area: e;
+}
+.grid-item-6 {
+    grid-area: f;
+}
+.grid-item-7 {
+    grid-area: g;
+}
+.grid-item-8 {
+    grid-area: h;
+}
+.grid-item-9 {
+    grid-area: i;
+}
+.grid-item-10 {
+    grid-area: j;
+}
+.grid-item-11 {
+    grid-area: k;
+}
+.grid-item-12 {
+    grid-area: l;
+}
+.grid-item-13 {
+    grid-area: m;
+}
+.grid-item-14 {
+    grid-area: n;
+}
+
+@keyframes opacity {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+.first-content, .first-title,
+.second-content, .second-title,
+.third-content, .third-title,
+.fourth-content, .fourth-title {
+    animation: opacity 800ms ease-in;
+}
+
+.first-content .grid-item-1 {
+    background: url("grafika/basket/basket\ \(1\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.first-content .grid-item-2 {
+    background: url("grafika/basket/basket\ \(2\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.first-content .grid-item-3 {
+    background: url("grafika/basket/basket\ \(3\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.first-content .grid-item-4 {
+    background: url("grafika/basket/basket\ \(4\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.first-content .grid-item-5 {
+    background: url("grafika/basket/basket\ \(5\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.first-content .grid-item-6 {
+    background: url("grafika/basket/basket\ \(6\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.first-content .grid-item-7 {
+    background: url("grafika/basket/basket\ \(7\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.first-content .grid-item-8 {
+    background: url("grafika/basket/basket\ \(8\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.first-content .grid-item-9 {
+    background: url("grafika/basket/basket\ \(9\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.first-content .grid-item-10 {
+    background: url("grafika/basket/basket\ \(10\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.first-content .grid-item-11 {
+    background: url("grafika/basket/basket\ \(11\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.first-content .grid-item-12 {
+    background: url("grafika/basket/basket\ \(12\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.first-content .grid-item-13 {
+    background: url("grafika/basket/basket\ \(13\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.first-content .grid-item-14 {
+    background: url("grafika/basket/basket\ \(14\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.second-content .grid-item-1 {
+    background: url("grafika/jdm/jdm\ \(1\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.second-content .grid-item-2 {
+    background: url("grafika/jdm/jdm\ \(2\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.second-content .grid-item-3 {
+    background: url("grafika/jdm/jdm\ \(3\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.second-content .grid-item-4 {
+    background: url("grafika/jdm/jdm\ \(4\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.second-content .grid-item-5 {
+    background: url("grafika/jdm/jdm\ \(5\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.second-content .grid-item-6 {
+    background: url("grafika/jdm/jdm\ \(6\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.second-content .grid-item-7 {
+    background: url("grafika/jdm/jdm\ \(7\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.second-content .grid-item-8 {
+    background: url("grafika/jdm/jdm\ \(8\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.second-content .grid-item-9 {
+    background: url("grafika/jdm/jdm\ \(9\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.second-content .grid-item-10 {
+    background: url("grafika/jdm/jdm\ \(10\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.second-content .grid-item-11 {
+    background: url("grafika/jdm/jdm\ \(11\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.second-content .grid-item-12 {
+    background: url("grafika/jdm/jdm\ \(12\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.second-content .grid-item-13 {
+    background: url("grafika/jdm/jdm\ \(13\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.second-content .grid-item-14 {
+    background: url("grafika/jdm/jdm\ \(14\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.third-content .grid-item-1 {
+    background: url("grafika/rap/rap\ \(1\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.third-content .grid-item-2 {
+    background: url("grafika/rap/rap\ \(2\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.third-content .grid-item-3 {
+    background: url("grafika/rap/rap\ \(3\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.third-content .grid-item-4 {
+    background: url("grafika/rap/rap\ \(4\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.third-content .grid-item-5 {
+    background: url("grafika/rap/rap\ \(5\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.third-content .grid-item-6 {
+    background: url("grafika/rap/rap\ \(6\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.third-content .grid-item-7 {
+    background: url("grafika/rap/rap\ \(7\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.third-content .grid-item-8 {
+    background: url("grafika/rap/rap\ \(8\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.third-content .grid-item-9 {
+    background: url("grafika/rap/rap\ \(9\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.third-content .grid-item-10 {
+    background: url("grafika/rap/rap\ \(10\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.third-content .grid-item-11 {
+    background: url("grafika/rap/rap\ \(11\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.third-content .grid-item-12 {
+    background: url("grafika/rap/rap\ \(12\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.third-content .grid-item-13 {
+    background: url("grafika/rap/rap\ \(13\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.third-content .grid-item-14 {
+    background: url("grafika/rap/rap\ \(14\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.fourth-content .grid-item-1 {
+    background: url("grafika/tattoo/tattoo\ \(1\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.fourth-content .grid-item-2 {
+    background: url("grafika/tattoo/tattoo\ \(2\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.fourth-content .grid-item-3 {
+    background: url("grafika/tattoo/tattoo\ \(3\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.fourth-content .grid-item-4 {
+    background: url("grafika/tattoo/tattoo\ \(4\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.fourth-content .grid-item-5 {
+    background: url("grafika/tattoo/tattoo\ \(5\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.fourth-content .grid-item-6 {
+    background: url("grafika/tattoo/tattoo\ \(6\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.fourth-content .grid-item-7 {
+    background: url("grafika/tattoo/tattoo\ \(7\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.fourth-content .grid-item-8 {
+    background: url("grafika/tattoo/tattoo\ \(8\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.fourth-content .grid-item-9 {
+    background: url("grafika/tattoo/tattoo\ \(9\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.fourth-content .grid-item-10 {
+    background: url("grafika/tattoo/tattoo\ \(10\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.fourth-content .grid-item-11 {
+    background: url("grafika/tattoo/tattoo\ \(11\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.fourth-content .grid-item-12 {
+    background: url("grafika/tattoo/tattoo\ \(12\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.fourth-content .grid-item-13 {
+    background: url("grafika/tattoo/tattoo\ \(13\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+.fourth-content .grid-item-14 {
+    background: url("grafika/tattoo/tattoo\ \(14\).jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.fade {
+    z-index: 10;
+    position: fixed;
+    bottom: -10px;
+}
+
+
+/* FORMS */
+
+.form-area {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 150vh;
+    background: var(--clr-transparent-grey);
+    z-index: 100;
+}
+form {
+    margin: 30px 0;
+}
+.form {
+    position: sticky;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: var(--clr-white);
+    width: 400px;
+    padding: 70px 50px 0 50px;
+    text-align: center;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 2px solid var(--clr-dark-grey);
+    box-shadow: 0px 0px 14px -5px var(--clr-black);
+}
+.form input {
+    margin: 3px;
+    padding: 12px 20px;
+    border: 2px solid var(--clr-dark-grey);
+    border-radius: 16px;
+    width: 200px;
+    height: 20px;
+}
+.form-logo img{
+    height: 40px;
+}
+.welcome-title {
+    font-size: 2.5rem;
+    font-family: "ubuntu";
+}
+.welcome-text {
+    width: 60%;
+    margin: 15px auto;
+    font-size: 1.1rem;
+}
+form input.register-button {
+    background: var(--clr-accent-red-1);
+    width: 245px;
+    height: 40px;
+    border: 0;
+    border-radius: 30px;
+    font-family: "ubuntu";
+    font-size: 1rem;
+    color: var(--clr-white);
+}
+form input.register-button:hover {
+    background: var(--clr-accent-red-2);
+}
+.form-info {
+    color: var(--clr-grey);
+    font-family: "ubuntu";
+    font-size: 0.8rem;
+}
+.form-info a {
+    color: var(--clr-black);
+    text-decoration: none;
+}
+.form-info a:hover {
+    text-decoration: underline;
+}
+.login-link {
+    margin: 30px 0 50px 0;
+}
+.login-link a{
+    color: var(--clr-grey);
+    font-family: "ubuntu";
+    font-size: 0.8rem;
+}
+.register-info {
+    height: 50px;
+    font-size: 1.3rem;
+    font-family: "ubuntu";
+    position: relative;
+    bottom: 0;
+    background: var(--clr-dark-grey);
+    margin: 20px -50px 0px -50px;
+    padding: 20px 0 0 0;
+}
+.back {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: url("grafika/back.png");
+    background-position: center;
+    background-size: 60%;
+    background-repeat: no-repeat;
+}
